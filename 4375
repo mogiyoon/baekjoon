@@ -1,0 +1,47 @@
+def last_one_finder(num):
+    str_n = str(num)
+    result = num
+    multiple = 1
+    while(str_n[-1] != "1"):
+        multiple += 1
+        result = num * multiple
+        str_n = str(result)
+    return multiple
+
+def one_finder_with_multiple(num, multiple):
+    str_n = str(num)
+    result = num
+    multiple_plus_ten = multiple
+    is_not_all_one = True
+
+    while(is_not_all_one):
+        check = 0
+        for i in range(len(str_n)):
+            if(str_n[i] == "1"):
+                check += 1
+        if(check == len(str_n)):
+            is_not_all_one = False
+        else:
+            result = num * multiple_plus_ten
+            multiple_plus_ten += 10
+            str_n = str(result)
+
+    return result
+
+def program(input):
+    num = input
+    multiple = last_one_finder(num)
+    result = one_finder_with_multiple(num, multiple)
+    return result
+
+while (True):
+    check_num = input()
+    if (check_num == ""):
+        break
+    for i in range(len(check_num)):
+        input_num = int(check_num)
+        result_num = program(input_num)
+        str_result_num = str(result_num)
+        print(str_result_num)
+
+#First trial
