@@ -45,3 +45,31 @@ while (True):
         print(str_result_num)
 
 #First trial
+
+def one_creator(n):
+    str_n = ""
+    for i in range(n):
+        str_n += "1"
+    num = int(str_n)
+    return num
+
+def program(input_num):
+    total_num = 0
+    digit = 0
+    remain = 1
+    while(remain != 0):
+        digit += 1
+        total_num = one_creator(digit)
+        remain = total_num%input_num
+    return digit
+
+is_input_num = True
+
+while(True):
+    try:
+        str_value = input()
+        input_num = int(str_value)
+        output_num = program(input_num)
+        print(output_num)
+    except:
+        break
