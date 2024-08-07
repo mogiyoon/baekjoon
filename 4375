@@ -1,3 +1,5 @@
+#First trial
+
 def last_one_finder(num):
     str_n = str(num)
     result = num
@@ -44,7 +46,7 @@ while (True):
         str_result_num = str(result_num)
         print(str_result_num)
 
-#First trial
+#Second trial
 
 def one_creator(n):
     str_n = ""
@@ -71,5 +73,20 @@ while(True):
         input_num = int(str_value)
         output_num = program(input_num)
         print(output_num)
+    except:
+        break
+
+
+#Third trial
+
+while(True):
+    try:
+        input_num = int(input())
+        total_num = ""
+        remain = 1
+        while(remain != 0):
+            total_num += "1"
+            remain = int(total_num)%input_num
+        print(len(total_num))
     except:
         break
